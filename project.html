@@ -19,14 +19,14 @@
       function() {
               if (liff.isLoggedIn()) {
                 console.log('compiler in liff.isLoggedIn()')
-                dolink();
-                console.log('Function dolink()  called')
+                SHiroH();
+                console.log('Function SHiroH()  called')
               } 
               else {
                 liff.login();
                 console.log('called liff.login();')
-                dolink();
-                console.log('dolink() called')
+                SHiroH();
+                console.log('SHiroH() called')
               }
             }
             );
@@ -41,7 +41,7 @@
     return decodeURIComponent(results[2].replace(/\+/g, ' '));               
     }
   
-    function dolink(){
+    function SHiroH(){
     var board=getParameterByName('board')
     console.log('Call API is work!')
 
@@ -344,10 +344,8 @@ if(board == "02"){
     }
   }
 }
-    } ]).then(function(){
-        
-        
-                
+    } ]).then(function()
+              {                
                 liff.closeWindow();
               })
             }
