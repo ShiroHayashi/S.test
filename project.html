@@ -25,10 +25,14 @@
         liff.init({ liffId: "1655867793-Wy1El0LD"},
       function() {
               if (liff.isLoggedIn()) {
+                console.log('เข้าสิวะ')
                 dolink();
-              } else {
+              } 
+              else {
                 liff.login();
+                console.log('รอก่อน')
                 dolink();
+                console.log('หำควยเท่าแขน')
               }
             }
             );
