@@ -25,14 +25,15 @@
         liff.init({ liffId: "1655867793-Wy1El0LD"},
       function() {
               if (liff.isLoggedIn()) {
-                console.log('เข้าสิวะ')
+                console.log('compiler in liff.isLoggedIn()')
                 dolink();
+                console.log('Function dolink()  called')
               } 
               else {
                 liff.login();
-                console.log('รอก่อน')
+                console.log('called liff.login();')
                 dolink();
-                console.log('หำควยเท่าแขน')
+                console.log('dolink() called')
               }
             }
             );
@@ -49,8 +50,10 @@
   
     function dolink(){
     var size=getParameterByName('size')
+    console.log('Call API is work!')
 
 //============
+console.log('Size is :'+size)
     if(size === "01"){ 
        liff.shareTargetPicker([{
           "type": "flex",
