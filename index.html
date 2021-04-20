@@ -14,6 +14,11 @@
   </style>
 </head>
 <body>
+
+<script
+    charset="utf-8"
+    src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js"
+></script>
     
 <script>
     window.onload = function(e) {
@@ -36,9 +41,10 @@
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));               
     }
-
+  
     async function dolink(){
 var size=getParameterByName('size')
+
 //============
     if(size === "01"){ 
        liff.shareTargetPicker([{
@@ -191,10 +197,7 @@ console.log()
     };
     }
 </script>
-<script
-    charset="utf-8"
-    src="https://static.line-scdn.net/liff/edge/2/sdk.js"
-  ></script>
+
   <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
