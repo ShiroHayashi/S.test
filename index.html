@@ -14,12 +14,6 @@
   </style>
 </head>
 <body>
-
-<script
-    charset="utf-8"
-    src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js"
-></script>
-    
 <script>
     window.onload = function(e) {
         liff.init({ liffId: "1655867793-GMMjbYXE"},
@@ -43,10 +37,10 @@
     }
   
     async function dolink(){
-var size=getParameterByName('size')
+var hof = getParameterByName("size")
 
 //============
-    if(size === "01"){ 
+    if(hof === "01"){ 
        liff.shareTargetPicker([{
           "type": "flex",
           "altText": "ประชาสัมพันธ์ ศปพร.",
@@ -197,7 +191,11 @@ console.log()
     };
     }
 </script>
-
+  
+  <script
+    charset="utf-8"
+    src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js"
+></script>
   <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
