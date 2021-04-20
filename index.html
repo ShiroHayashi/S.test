@@ -37,10 +37,9 @@
     return decodeURIComponent(results[2].replace(/\+/g, ' '));               
     }
 
-function dolink(){
-var shi=getParameterByName("anounce")
+var size=getParameterByName('size')
 //============
-    if(shi === "01"){ 
+    if(size === "01"){ 
        liff.shareTargetPicker([{
           "type": "flex",
           "altText": "ประชาสัมพันธ์ ศปพร.",
@@ -143,7 +142,7 @@ var shi=getParameterByName("anounce")
             "action": {
               "type": "uri",
               "label": "action",
-              "uri": "https://liff.line.me/1655867793-GMMjbYXE?anounce=01"
+              "uri": "https://liff.line.me/1655867793-GMMjbYXE?size=01"
             }
           }
         ],
@@ -187,7 +186,7 @@ var shi=getParameterByName("anounce")
 
 //============
 console.log()
-}
+
     };
 
 </script>
