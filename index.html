@@ -2,20 +2,58 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover"/>
   <title>แชร์ให้เพื่อน</title>
   </style>
 </head>
 <body>
-  <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
-  <script>
-    async function main() {
-      await liff.init({ liffId: "1655867793-GMMjbYXE" })
-      await liff.shareTargetPicker([
-        {
+
+<script
+    charset="utf-8"
+    src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js"
+></script>
+    
+<script>
+    window.onload = function(e) {
+        liff.init({ liffId: "1655867793-GMMjbYXE"},
+      function() {
+              if (liff.isLoggedIn()) {
+                console.log('compiler in liff.isLoggedIn()')
+                SHiroH();
+                console.log('Function SHiroH()  called')
+              } 
+              else {
+                liff.login();
+                console.log('called liff.login();')
+                SHiroH();
+                console.log('SHiroH() called')
+              }
+            }
+            );
+    
+    function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));               
+    }
+  
+    function SHiroH(){
+    var board=getParameterByName('board')
+    console.log('Call API is work!')
+
+//============
+console.log('board is :'+board)
+//======================= ศปพร. แชร์หน้าหลัก
+if(board == "01"){ 
+       liff.shareTargetPicker([{
           "type": "flex",
-          "altText": "Flex Message from Share Target Picker",
-          "contents": {
+          "altText": "ศปพร. แชร์หน้าหลัก",
+          "contents": 
+          {
   "type": "bubble",
   "size": "giga",
   "hero": {
@@ -149,10 +187,19 @@
   }
 }
 }
-      ])
-      liff.closeWindow()
+
+ ]).then(function(){
+                
+                liff.closeWindow();
+              })
+            }
+
+//======================= 
+
+console.log()
+
+    };
     }
-    main()
-  </script>
+</script>
 </body>
 </html>
