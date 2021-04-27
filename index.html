@@ -193,6 +193,99 @@ if(board == "01"){
                 liff.closeWindow();
               })
             }
+//======================= บริจาคโลหิตช่วยชาติ
+if(board == "02"){ 
+       liff.shareTargetPicker([{"type": "flex",
+          "altText": "บริจาคโลหิตช่วยชาติ",
+          "contents": 
+          {
+  "type": "bubble",
+  "size": "giga",
+  "hero": {
+    "type": "image",
+    "url": "https://www.img.in.th/images/63776170112e95da05a4327df60095f0.png",
+    "size": "full",
+    "aspectRatio": "9:13",
+    "aspectMode": "fit",
+    "action": {
+      "type": "uri",
+      "uri": "https://www.facebook.com/infdiv15/posts/4162585667132272",
+      "label": "action"
+    },
+    "backgroundColor": "#B9F9FFFF"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "xxl",
+        "spacing": "xxl",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://www.img.in.th/images/c11a502382b9b8765217d1c27957aa3e.png",
+            "margin": "none",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://www.facebook.com/infdiv15"
+            },
+            "aspectRatio": "32:20",
+            "size": "full",
+            "aspectMode": "fit"
+          },
+          {
+            "type": "image",
+            "url": "https://i.imgur.com/gpSnMVj.png",
+            "aspectMode": "fit",
+            "aspectRatio": "60:20",
+            "size": "full",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liff.line.me/1655867793-GMMjbYXE?board=02"
+            }
+          }
+        ],
+        "borderWidth": "none"
+      }
+    ],
+    "borderWidth": "none"
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "text",
+        "text": "ฝ่ายกิจการพลเรือนกองพลทหารราบที่ 15",
+        "align": "end",
+        "weight": "bold",
+        "size": "md"
+      },
+      {
+        "type": "spacer",
+        "size": "sm"
+      }
+    ],
+    "flex": 0
+  },
+  "styles": {
+    "body": {
+      "backgroundColor": "#368BC1",
+      "separator": false
+    }
+  }
+}
+}
+           ]).then(function(){
+                liff.closeWindow();
+             })
+           }
 //======================= 
 
 console.log()
