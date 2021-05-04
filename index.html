@@ -286,6 +286,100 @@ if(board == "02"){
                 liff.closeWindow();
              })
            }
+//======================= เว็บไซต์
+if(board == "03"){ 
+       liff.shareTargetPicker([{
+        "type": "flex",
+          "altText": "เว็บไซต์",
+          "contents": 
+          {
+  "type": "bubble",
+  "size": "giga",
+  "hero": {
+    "type": "image",
+    "url": "https://www.img.in.th/images/042c67ac604f04a813a24c2ca9f8dd42.png",
+    "size": "full",
+    "aspectRatio": "13:13.2",
+    "aspectMode": "fit",
+    "action": {
+      "type": "uri",
+      "uri": "https://www.facebook.com/infdiv15/posts/4162585667132272",
+      "label": "action"
+    },
+    "backgroundColor": "#B9F9FFFF"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "xxl",
+        "spacing": "xxl",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://www.img.in.th/images/9496fe284c08d620e764cf02eb094c16.png",
+            "margin": "none",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://com410109070.wordpress.com/"
+            },
+            "aspectRatio": "70:20",
+            "size": "full",
+            "aspectMode": "fit"
+          },
+          {
+            "type": "image",
+            "url": "https://i.imgur.com/gpSnMVj.png",
+            "aspectMode": "fit",
+            "aspectRatio": "60:20",
+            "size": "full",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liff.line.me/1655867793-GMMjbYXE?board=03"
+            }
+          }
+        ],
+        "borderWidth": "none"
+      }
+    ],
+    "borderWidth": "none"
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "text",
+        "text": "ดำเนินการโดย ประชาสัมพันธ์ ศปพร.",
+        "align": "end",
+        "weight": "bold",
+        "size": "lg"
+      },
+      {
+        "type": "spacer",
+        "size": "sm"
+      }
+    ],
+    "flex": 0
+  },
+  "styles": {
+    "body": {
+      "backgroundColor": "#fffee7",
+      "separator": false
+    }
+  }
+}
+       } ]).then(function()
+              {                
+                liff.closeWindow();
+              })
+            }
 //======================= 
 
 console.log()
