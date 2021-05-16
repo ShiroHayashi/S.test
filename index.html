@@ -297,7 +297,7 @@ if(board == "03"){
   "size": "giga",
   "hero": {
     "type": "image",
-    "url": "https://www.img.in.th/images/bccb85567f072842613f6016e374c557.png",
+    "url": "https://www.img.in.th/images/042c67ac604f04a813a24c2ca9f8dd42.png",
     "size": "full",
     "aspectRatio": "13:13.2",
     "aspectMode": "fit",
@@ -380,6 +380,100 @@ if(board == "03"){
                 liff.closeWindow();
               })
             }
+//======================= ส่งต่อความห่วงใย Army delivery บุกถึงบ้าน แจกจ่ายผลผลิตโครงการทหารพันธุ์ดี ถึงมือพี่น้องประชาชนในพื้นที่ พวกเราจะผ่านวิกฤติ covid-19 ไปด้วยกัน
+if(board == "04"){ 
+       liff.shareTargetPicker([{
+        "type": "flex",
+          "altText": "ส่งต่อความห่วงใย Army delivery บุกถึงบ้าน แจกจ่ายผลผลิตโครงการทหารพันธุ์ดี ถึงมือพี่น้องประชาชนในพื้นที่ พวกเราจะผ่านวิกฤติ covid-19 ไปด้วยกัน",
+          "contents": 
+          {
+  "type": "bubble",
+  "size": "giga",
+  "hero": {
+    "type": "image",
+    "url": "https://www.img.in.th/images/cf639a87fd28d59e50fc659edf3cc498.png",
+    "size": "full",
+    "aspectRatio": "9:12.95",
+    "aspectMode": "fit",
+    "action": {
+      "type": "uri",
+      "uri": "https://www.facebook.com/infdiv15/posts/4217656154958556",
+      "label": "action"
+    },
+    "backgroundColor": "#B9F9FFFF"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "xxl",
+        "spacing": "xxl",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://www.img.in.th/images/c11a502382b9b8765217d1c27957aa3e.png",
+            "margin": "none",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://www.facebook.com/infdiv15"
+            },
+            "aspectRatio": "32:20",
+            "size": "full",
+            "aspectMode": "fit"
+          },
+          {
+            "type": "image",
+            "url": "https://i.imgur.com/gpSnMVj.png",
+            "aspectMode": "fit",
+            "aspectRatio": "60:20",
+            "size": "full",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liff.line.me/1655867793-GMMjbYXE?board=04"
+            }
+          }
+        ],
+        "borderWidth": "none"
+      }
+    ],
+    "borderWidth": "none"
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "text",
+        "text": "ฝ่ายกิจการพลเรือนกองพลทหารราบที่ 15",
+        "align": "end",
+        "weight": "bold",
+        "size": "md"
+      },
+      {
+        "type": "spacer",
+        "size": "sm"
+      }
+    ],
+    "flex": 0
+  },
+  "styles": {
+    "body": {
+      "backgroundColor": "#368BC1",
+      "separator": false
+    }
+  }
+}
+       } ]).then(function()
+              {                
+                liff.closeWindow();
+              })
+            }            
 //======================= 
 
 console.log()
