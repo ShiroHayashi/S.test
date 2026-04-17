@@ -2,167 +2,105 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Share Service</title>
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
         async function main() {
-            // 1. เริ่มการทำงานของ LIFF (ใส่ LIFF ID ของคุณที่ได้จากหน้าจอ)
-            await liff.init({ liffId: "2009822001-zK20v9D4" }); 
+            try {
+                // 1. เริ่มการทำงานของ LIFF
+                await liff.init({ liffId: "2009822001-zK20v9D4" }); 
 
-            // 2. เช็กว่าล็อคอินหรือยัง
-            if (!liff.isLoggedIn()) {
-                liff.login();
-            } else {
-                // 3. สั่งเปิดหน้าเลือกเพื่อนทันทีที่เปิดหน้านี้ขึ้นมา
-                liff.shareTargetPicker([
-                    {
-                        "type": "flex",
-                        "altText": "ส่งต่อข้อมูลสำคัญ",
-                        "contents": { {
-  "type": "bubble",
-  "hero": {
-    "type": "image",
-    "url": "https://i.ibb.co/9myKBg11/image.png",
-    "size": "full",
-    "aspectRatio": "13:13",
-    "aspectMode": "cover",
-    "action": {
-      "type": "uri",
-      "uri": "https://line.me/"
-    }
-  },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "ประชาสัมพันธ์ติดตามข่าวสาร",
-        "weight": "bold",
-        "size": "lg",
-        "color": "#ffffff"
-      },
-      {
-        "type": "box",
-        "layout": "baseline",
-        "margin": "md",
-        "contents": [
-          {
-            "type": "icon",
-            "size": "lg",
-            "url": "https://i.ibb.co/MDr75YGy/image.png"
-          },
-          {
-            "type": "text",
-            "text": "pattanitaskforce46 คลิ๊ก)",
-            "size": "md",
-            "color": "#999999",
-            "margin": "md",
-            "flex": 0,
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://www.facebook.com/pattanitaskforce46/"
-            }
-          }
-        ]
-      },
-      {
-        "type": "box",
-        "layout": "baseline",
-        "margin": "md",
-        "contents": [
-          {
-            "type": "icon",
-            "size": "lg",
-            "url": "https://i.ibb.co/Wv9xgnPP/image.png"
-          },
-          {
-            "type": "text",
-            "text": "@civilpattani69 (คลิ๊ก)",
-            "size": "md",
-            "color": "#999999",
-            "margin": "md",
-            "flex": 0,
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://x.com/civilpattani69"
-            }
-          }
-        ]
-      },
-      {
-        "type": "box",
-        "layout": "baseline",
-        "margin": "md",
-        "contents": [
-          {
-            "type": "icon",
-            "size": "lg",
-            "url": "https://i.ibb.co/ZzhBQQR4/image.png"
-          },
-          {
-            "type": "text",
-            "text": "pattani_task_force (คลิ๊ก)",
-            "size": "md",
-            "color": "#999999",
-            "margin": "md",
-            "flex": 0,
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://www.instagram.com/pattani_task_force/"
-            }
-          }
-        ]
-      }
-    ]
-  },
-  "footer": {
-    "type": "box",
-    "layout": "vertical",
-    "spacing": "sm",
-    "contents": [
-      {
-        "type": "button",
-        "style": "link",
-        "height": "sm",
-        "action": {
-          "type": "uri",
-          "label": "แชร์",
-          "uri": "https://liff.line.me/2009822001-zK20v9D4"
-        },
-        "color": "#FFFFFF",
-        "margin": "none"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [],
-        "margin": "sm"
-      }
-    ],
-    "flex": 0,
-    "backgroundColor": "#bf0000"
-  },
-  "styles": {
-    "body": {
-      "separator": true,
-      "backgroundColor": "#001f3d"
-    }
-  }
-} }
+                // 2. เช็กการ Login
+                if (!liff.isLoggedIn()) {
+                    liff.login();
+                } else {
+                    // 3. ตรวจสอบว่าสิทธิ์ shareTargetPicker พร้อมใช้งานไหม
+                    if (liff.isApiAvailable('shareTargetPicker')) {
+                        await liff.shareTargetPicker([
+                            {
+                                "type": "flex",
+                                "altText": "ประชาสัมพันธ์ติดตามข่าวสาร",
+                                "contents": {
+                                    "type": "bubble",
+                                    "hero": {
+                                        "type": "image",
+                                        "url": "https://i.ibb.co/9myKBg11/image.png",
+                                        "size": "full",
+                                        "aspectRatio": "13:13",
+                                        "aspectMode": "cover",
+                                        "action": { "type": "uri", "uri": "https://line.me/" }
+                                    },
+                                    "body": {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            { "type": "text", "text": "ประชาสัมพันธ์ติดตามข่าวสาร", "weight": "bold", "size": "lg", "color": "#ffffff" },
+                                            {
+                                                "type": "box",
+                                                "layout": "baseline",
+                                                "margin": "md",
+                                                "contents": [
+                                                    { "type": "icon", "size": "lg", "url": "https://i.ibb.co/MDr75YGy/image.png" },
+                                                    { "type": "text", "text": "pattanitaskforce46 (คลิก)", "size": "md", "color": "#999999", "margin": "md", "flex": 0, "action": { "type": "uri", "uri": "https://www.facebook.com/pattanitaskforce46/" } }
+                                                ]
+                                            },
+                                            {
+                                                "type": "box",
+                                                "layout": "baseline",
+                                                "margin": "md",
+                                                "contents": [
+                                                    { "type": "icon", "size": "lg", "url": "https://i.ibb.co/Wv9xgnPP/image.png" },
+                                                    { "type": "text", "text": "@civilpattani69 (คลิก)", "size": "md", "color": "#999999", "margin": "md", "flex": 0, "action": { "type": "uri", "uri": "https://x.com/civilpattani69" } }
+                                                ]
+                                            },
+                                            {
+                                                "type": "box",
+                                                "layout": "baseline",
+                                                "margin": "md",
+                                                "contents": [
+                                                    { "type": "icon", "size": "lg", "url": "https://i.ibb.co/ZzhBQQR4/image.png" },
+                                                    { "type": "text", "text": "pattani_task_force (คลิก)", "size": "md", "color": "#999999", "margin": "md", "flex": 0, "action": { "type": "uri", "uri": "https://www.instagram.com/pattani_task_force/" } }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "footer": {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "spacing": "sm",
+                                        "contents": [
+                                            {
+                                                "type": "button",
+                                                "style": "link",
+                                                "height": "sm",
+                                                "action": {
+                                                    "type": "uri",
+                                                    "label": "แชร์",
+                                                    "uri": "https://liff.line.me/2009822001-zK20v9D4"
+                                                },
+                                                "color": "#FFFFFF"
+                                            }
+                                        ],
+                                        "backgroundColor": "#bf0000"
+                                    },
+                                    "styles": { "body": { "separator": true, "backgroundColor": "#001f3d" } }
+                                }
+                            }
+                        ]);
+                        liff.closeWindow(); // ส่งเสร็จแล้วปิดหน้าต่างอัตโนมัติ
+                    } else {
+                        alert("กรุณาเปิดในแอป LINE หรือตรวจสอบการติ๊ก Scopes");
                     }
-                ])
-                .then(() => { liff.closeWindow(); }) // ส่งเสร็จให้ปิดหน้าต่างเอง
-                .catch((err) => { console.error(err); });
+                }
+            } catch (error) {
+                console.error("LIFF Error:", error);
             }
         }
         main();
     </script>
 </head>
-<body>
-    <p>กำลังโหลดหน้าเลือกเพื่อน...</p>
+<body style="background-color: #001f3d; color: white; text-align: center; font-family: sans-serif; padding-top: 50px;">
+    <p>กำลังเปิดหน้าเลือกเพื่อน...</p>
 </body>
 </html>
